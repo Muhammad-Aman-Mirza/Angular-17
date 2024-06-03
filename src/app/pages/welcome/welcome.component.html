@@ -8,8 +8,8 @@
 		<!-- <input nz-input placeholder="Basic usage" [(ngModel)]="newServerContent" type="text" /> -->
 		<input nz-input placeholder="Basic usage" #newServerContent type="text" />
 		<br><br>
-		<button nz-button nzType="primary" (click)="onAddServer(newServerName.value,newServerContent.value)">Add Server</button>
-		<button nz-button nzType="primary" (click)="onAddBluePrint(newServerName.value,newServerContent.value)">Add BluePrint</button>
+		<button nz-button nzType="primary" (click)="onAddServer(server)">Add Server</button>
+		<!-- <button nz-button nzType="primary" (click)="onAddBluePrint(newServerName.value,newServerContent.value)">Add BluePrint</button> -->
 	</div>
 
 </div>
@@ -19,4 +19,6 @@
 		<strong *ngIf="el.type === 'bluePrint'" style="color: blue;">Name: {{el.name}} And Content: {{el.content}}</strong>
 		
 	</div>
+	<app-login></app-login>
+	<router-outlet></router-outlet>
 </div>
