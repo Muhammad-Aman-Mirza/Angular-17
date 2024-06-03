@@ -1,0 +1,22 @@
+<div nz-row>
+	<div nz-col nzspan="12">
+		<p>Add new Servers or blueprints!</p><br>
+    <nz-form-label>Server Name</nz-form-label><br>
+		<!-- <input nz-input placeholder="Basic usage" [(ngModel)]="newServerName" type="text" /><br> -->
+		<input nz-input placeholder="Basic usage" #newServerName type="text" /><br>
+		<nz-form-label>Server Content</nz-form-label><br>
+		<!-- <input nz-input placeholder="Basic usage" [(ngModel)]="newServerContent" type="text" /> -->
+		<input nz-input placeholder="Basic usage" #newServerContent type="text" />
+		<br><br>
+		<button nz-button nzType="primary" (click)="onAddServer(newServerName.value,newServerContent.value)">Add Server</button>
+		<button nz-button nzType="primary" (click)="onAddBluePrint(newServerName.value,newServerContent.value)">Add BluePrint</button>
+	</div>
+
+</div>
+<div nz-row>
+	<div nz-col nzspan="12" *ngFor="let el of server">
+		<strong *ngIf="el.type === 'server'" style="color: red;">Name: {{el.name}} And Content: {{el.content}}</strong><br>
+		<strong *ngIf="el.type === 'bluePrint'" style="color: blue;">Name: {{el.name}} And Content: {{el.content}}</strong>
+		
+	</div>
+</div>
