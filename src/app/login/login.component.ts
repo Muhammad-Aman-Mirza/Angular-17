@@ -17,7 +17,7 @@ export class LoginComponent {
   validateForm: FormGroup<{
     userName: FormControl<string>;
     password: FormControl<string>;
-    remember: FormControl<boolean>;
+    remember: FormControl<boolean|any>;
   }> = this.fb.group({
     userName: ['', [Validators.required]],
     password: ['', [Validators.required]],
